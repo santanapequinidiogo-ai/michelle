@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de Estética Mychelle Fernandes — Realce Sua Beleza Natural</title>
+  <meta name="description" content="Clínica boutique especializada em estética facial e corporal avançada, rejuvenescimento e bem-estar por Mychelle Fernandes.">
+  
+  <!-- Fontes & Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS & Iconify & GSAP -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden bg-[#faf9fa] text-[#1e1b24] antialiased" style="background: radial-gradient(circle at 18% 8%, rgba(242, 184, 216, 0.25), transparent 28rem), radial-gradient(circle at 78% 30%, rgba(240, 200, 180, 0.2), transparent 34rem), linear-gradient(rgb(255, 255, 255) 0%, rgb(250, 249, 250) 100%);">
+
+  <!-- Barra Superior de Progresso de Rolagem -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1.5 w-full bg-gradient-to-r from-[#f08bb1] to-[#e06691] z-50 origin-left scale-x-0"></div>
+
+  <!-- Canvas WebGL Aura Interativo (Fundo Vivo do Design System) -->
+  <canvas id="auraCanvas" aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-60"></canvas>
+  <div class="pointer-events-none fixed inset-0 z-0 opacity-[0.16]" style="background-image: radial-gradient(rgba(0, 0, 0, 0.1) 0.0625rem, transparent 0.0625rem); background-size: 0.25rem 0.25rem;"></div>
+
+  <main class="relative z-10">
+
+    <!-- ============================================== -->
+    <!-- 1. HEADER & BARRA DE NAVEGAÇÃO                 -->
+    <!-- ============================================== -->
+    <header class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-12">
+      <a href="#" aria-label="Mychelle Fernandes Início" class="motion-item text-2xl font-medium tracking-tight text-[#1e1b24] flex items-center gap-2">
+        <span>Mychelle Fernandes</span>
+        <span class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-[#f08bb1]/15 text-[#e06691] font-semibold hidden sm:inline-block">
+          Estética Avançada
+        </span>
+      </a>
+
+      <nav aria-label="Navegação Principal" class="motion-item hidden items-center gap-10 text-sm font-normal text-[#1e1b24]/90 md:flex">
+        <a class="transition hover:text-[#f08bb1]" href="#inicio">Início</a>
+        <a class="transition hover:text-[#f08bb1]" href="#procedimentos">Procedimentos</a>
+        <a class="transition hover:text-[#f08bb1]" href="#diferenciais">Diferenciais</a>
+        <a class="transition hover:text-[#f08bb1]" href="#sobre">A Especialista</a>
+        <a class="transition hover:text-[#f08bb1]" href="#depoimentos">Avaliações</a>
+        <a class="transition hover:text-[#f08bb1]" href="#faq">FAQ</a>
+      </nav>
+
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Centro%20de%20Est%C3%A9tica%20Mychelle%20Fernandes!" target="_blank" rel="noopener noreferrer" class="motion-item rounded-md bg-[#1e1b24] px-8 py-3.5 text-sm font-medium text-white shadow-[0_1.25rem_4rem_rgba(0,0,0,.08)] transition hover:-translate-y-0.5 hover:bg-[#2c2836] focus:outline-none focus:ring-2 focus:ring-[#1e1b24]/70">
+        Agendar Consulta
+      </a>
+    </header>
+
+    <!-- ============================================== -->
+    <!-- 2. HERO SECTION COM MOTION & WORD ROTATOR     -->
+    <!-- ============================================== -->
+    <section id="inicio" class="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 pt-16 sm:px-10 sm:pt-24 lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:pb-32 lg:pt-20">
+      <div class="max-w-xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f08bb1]/15 text-[#e06691] text-xs font-medium mb-6">
+          <iconify-icon icon="solar:star-fall-linear" class="text-sm"></iconify-icon>
+          <span>Protocolos Personalizados de Alto Padrão</span>
+        </div>
+
+        <h1 class="text-5xl font-medium leading-[1.12] tracking-tight text-[#1e1b24] sm:text-6xl lg:text-[4.75rem]" aria-label="Realce sua beleza natural com tratamentos faciais, corporais, exclusivos">
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">Realce</span>
+          </span>
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">sua</span>
+          </span>
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">beleza</span>
+          </span>
+          <br>
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">natural</span>
+          </span>
+          <div class="inline-grid overflow-hidden align-bottom h-[1.15em] relative top-2">
+            <span class="word-rotator inline-block col-start-1 row-start-1 text-[#f08bb1] pb-2">
+              facial
+            </span>
+            <span class="word-rotator inline-block col-start-1 row-start-1 text-[#f08bb1] opacity-0 translate-y-full pb-2">
+              corporal
+            </span>
+            <span class="word-rotator inline-block col-start-1 row-start-1 text-[#f08bb1] opacity-0 translate-y-full pb-2">
+              exclusiva
+            </span>
+          </div>
+        </h1>
+
+        <p class="motion-item mt-8 max-w-lg text-sm font-light leading-7 text-[#1e1b24]/70">
+          No <strong>Centro de Estética Mychelle Fernandes</strong>, aliamos tecnologia estética de vanguarda a um atendimento acolhedor e humanizado. Cada protocolo é desenhado sob medida para valorizar seus traços únicos com máxima segurança e sutileza.
+        </p>
+
+        <div class="motion-item mt-10 flex flex-wrap items-center gap-6">
+          <a href="#procedimentos" class="rounded-md bg-gradient-to-r from-[#f08bb1] to-[#e06691] px-9 py-4 text-sm font-medium text-white shadow-[0_1rem_2.5rem_rgba(240,139,177,.3)] transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#f08bb1]/60">
+            Conhecer Procedimentos
+          </a>
+          <a href="#sobre" class="text-sm font-medium text-[#1e1b24]/90 transition hover:text-[#f08bb1] flex items-center gap-1.5">
+            Conheça a Clínica
+            <iconify-icon icon="solar:arrow-right-up-linear" class="text-base"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual com Corte Poligonal e Painel Flutuante -->
+      <div class="motion-hero relative min-h-[28rem] lg:min-h-[34rem]">
+        <div class="absolute right-0 top-0 h-[24rem] w-full overflow-hidden bg-[#f7ebeb] shadow-[0_2rem_6rem_rgba(0,0,0,.08)] sm:h-[28rem] lg:w-[38rem]" style="clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%, 0 16%);">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80" alt="Tratamento estético facial na Clínica Mychelle Fernandes" class="h-full w-full object-cover opacity-95" style="filter: saturate(1.1) contrast(1.03); object-position: center 35%;">
+          <div class="absolute inset-0" style="background: radial-gradient(circle at 12% 72%, rgba(240, 139, 177, 0.25), transparent 20rem), linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.25));"></div>
+        </div>
+
+        <!-- Painel de Destaque Flutuante -->
+        <div class="gradient-panel absolute bottom-6 right-0 flex h-32 w-[90%] items-center justify-end gap-5 border border-black/5 pr-10 shadow-[0_2rem_5rem_rgba(0,0,0,.08)] sm:w-[26rem] lg:bottom-16 bg-white cursor-pointer transition-transform hover:-translate-y-1 rounded-sm" style="background: linear-gradient(100deg, rgba(255, 255, 255, 0.96), rgba(250, 245, 247, 0.98), rgba(255, 255, 255, 0.96));">
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#f08bb1]/15 text-[#e06691]">
+            <iconify-icon icon="solar:magic-stick-3-linear" class="text-2xl" style="stroke-width: 1.5;"></iconify-icon>
+          </span>
+          <div>
+            <span class="block text-sm font-medium text-[#1e1b24]">
+              Avaliação Facial 3D
+            </span>
+            <span class="text-xs text-[#1e1b24]/60">
+              Diagnóstico preciso de cada camada da sua pele
+            </span>
+          </div>
+        </div>
+
+        <!-- Selo Giratório Circular -->
+        <div class="absolute bottom-0 left-[25%] hidden h-28 w-28 animate-[spin_16s_linear_infinite] items-center justify-center rounded-full sm:flex lg:bottom-6">
+          <div class="absolute inset-0 rounded-full border border-black/10"></div>
+          <div class="relative flex h-14 w-14 items-center justify-center rounded-full bg-black/5 backdrop-blur-md">
+            <iconify-icon icon="solar:arrow-down-linear" class="text-3xl text-[#1e1b24]" style="stroke-width: 1.5;"></iconify-icon>
+          </div>
+          <span class="absolute text-[10px] font-medium uppercase tracking-[0.35rem] text-[#1e1b24]" style="transform: translateY(-2.8rem);">
+            CUIDADO
+          </span>
+          <span class="absolute text-[10px] font-medium uppercase tracking-[0.35rem] text-[#1e1b24]" style="transform: translateY(2.8rem) rotate(180deg);">
+            BELEZA
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 3. DIFERENCIAIS CLÍNICOS (REVEAL CARDS)        -->
+    <!-- ============================================== -->
+    <section id="diferenciais" class="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 px-6 py-16 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:px-12 lg:py-24">
+      <div class="relative min-h-[32rem]">
+        <!-- Card 1 -->
+        <article class="reveal-card absolute left-0 top-0 w-[18rem] overflow-hidden shadow-[0_1.5rem_5rem_rgba(0,0,0,.15)] sm:w-[19rem]" style="clip-path: polygon(0px 0px, 86% 0px, 100% 12%, 100% 100%, 0px 100%); background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)); padding: 0.0625rem;">
+          <div class="h-full w-full overflow-hidden bg-white">
+            <img src="https://images.unsplash.com/photo-1512290900672-1f4f5f59fa4f?auto=format&fit=crop&w=800&q=80" alt="Tecnologia e cosmecêuticos avançados" class="h-64 w-full object-cover" style="filter: saturate(1.1); object-position: center 30%;">
+            <div class="p-6" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.96), rgba(250, 245, 247, 0.9), rgba(255, 255, 255, 0.9));">
+              <iconify-icon icon="solar:magic-stick-3-linear" class="text-2xl text-[#f08bb1]" style="stroke-width: 1.5;"></iconify-icon>
+              <h3 class="mt-4 text-lg font-medium tracking-tight text-[#1e1b24]">
+                Cosmecêuticos Nobres
+              </h3>
+              <p class="mt-2 text-sm font-light leading-6 text-[#1e1b24]/65">
+                Fórmulas bioativas de alta penetração que hidratam e regeneram as células com máxima eficácia.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="reveal-card absolute left-[38%] top-32 w-[18rem] overflow-hidden shadow-[0_1.5rem_5rem_rgba(0,0,0,.15)] sm:w-[19rem]" style="clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%); background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)); padding: 0.0625rem;">
+          <div class="h-full w-full overflow-hidden bg-white">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Ambiente acolhedor da clínica" class="h-60 w-full object-cover" style="filter: saturate(1.1); object-position: center 30%;">
+            <div class="p-6" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.96), rgba(250, 245, 247, 0.9), rgba(255, 255, 255, 0.9));">
+              <iconify-icon icon="solar:star-fall-linear" class="text-2xl text-[#f08bb1]" style="stroke-width: 1.5;"></iconify-icon>
+              <h3 class="mt-4 text-lg font-medium tracking-tight text-[#1e1b24]">
+                Resultados Duradouros
+              </h3>
+              <p class="mt-2 text-sm font-light leading-6 text-[#1e1b24]/65">
+                Procedimentos não invasivos planejados para manter sua pele radiante, firme e rejuvenescida.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="max-w-md lg:pl-6">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#e06691]">Por que nos escolher</span>
+        <h2 class="reveal-title text-4xl sm:text-5xl font-medium leading-tight tracking-tight mt-2 text-[#1e1b24]">
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">Ciência,</span>
+          </span>
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">arte</span>
+          </span>
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">e</span>
+          </span>
+          <span class="inline-block overflow-hidden align-bottom">
+            <span class="word inline-block">cuidado.</span>
+          </span>
+        </h2>
+        <p class="mt-6 text-sm font-light leading-6 text-[#1e1b24]/70">
+          Acreditamos que a verdadeira estética não padroniza; ela harmoniza. Em nossa clínica você encontra um refúgio de tranquilidade com atendimento exclusivo com hora marcada, onde cada detalhe foi concebido para o seu bem-estar integral.
+        </p>
+        <a href="#sobre" class="mt-8 inline-flex rounded-md bg-[#1e1b24] px-9 py-4 text-sm font-medium text-white shadow-[0_1rem_2.5rem_rgba(0,0,0,.15)] transition hover:-translate-y-0.5 hover:bg-black">
+          Conheça Nossa História
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 4. FAIXA DE CONFIANÇA & NÚMEROS                -->
+    <!-- ============================================== -->
+    <section class="relative mx-auto my-12 w-full max-w-7xl px-0 sm:px-10 lg:px-12">
+      <div class="reveal-card grid min-h-72 grid-cols-1 items-center gap-8 bg-[#f5eef1] px-8 py-12 shadow-[0_2rem_6rem_rgba(0,0,0,.05)] sm:px-16 lg:grid-cols-[16rem_1fr_18rem]" style="clip-path: polygon(0 0, 94% 0, 100% 18%, 100% 100%, 0 100%);">
+        <div class="relative mx-auto h-36 w-52">
+          <div class="absolute left-14 top-0 h-36 w-36 rounded-full bg-[#f08bb1]"></div>
+          <div class="absolute left-0 top-0 flex h-36 w-36 items-center justify-center rounded-full bg-white text-3xl font-medium tracking-tight text-[#12111f] shadow-sm">
+            +5.000
+          </div>
+        </div>
+        <div class="text-center">
+          <h2 class="reveal-title text-2xl sm:text-3xl font-normal leading-tight tracking-tight text-[#1e1b24]">
+            Pacientes transformados e com autoestima renovada.
+          </h2>
+          <p class="mt-3 text-xs sm:text-sm font-light text-[#1e1b24]/70 max-w-md mx-auto">
+            Receba em seu e-mail nosso guia exclusivo sobre cuidados com a pele e ofertas de tratamentos sazonais.
+          </p>
+          <form id="subscribe-form" class="mt-6 flex w-full max-w-xs mx-auto items-center gap-2">
+            <input type="email" placeholder="Seu melhor e-mail" required class="w-full rounded-md border border-black/10 bg-white/70 px-4 py-3 text-sm outline-none focus:border-[#f08bb1] focus:ring-1 focus:ring-[#f08bb1] transition placeholder:text-gray-500">
+            <button type="submit" class="shrink-0 rounded-md bg-[#1e1b24] px-5 py-3 text-sm font-medium text-white shadow-md hover:bg-black transition focus:outline-none">
+              Receber Guia
+            </button>
+          </form>
+          <p id="subscribe-msg" class="mt-2 text-xs font-medium text-[#1e1b24] opacity-0 transition-opacity">
+            Obrigado! Em breve você receberá nossas novidades.
+          </p>
+        </div>
+        <div class="relative mx-auto h-28 w-56 overflow-hidden rounded-[3rem] bg-white/80 flex items-center justify-center shadow-inner">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Sala clínica" class="h-full w-full object-cover opacity-75">
+          <span class="absolute inset-0 flex items-center justify-center bg-black/10">
+            <iconify-icon icon="solar:star-linear" class="text-3xl text-white"></iconify-icon>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 5. CATÁLOGO DE PROCEDIMENTOS (PRODUCT CARDS)   -->
+    <!-- ============================================== -->
+    <section id="procedimentos" class="relative mx-auto w-full max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+      <div class="mb-14 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-[#e06691]">Menu de Tratamentos</span>
+          <h2 class="reveal-title text-4xl sm:text-5xl font-medium leading-tight tracking-tight text-[#1e1b24] mt-1">
+            Procedimentos Consagrados
+          </h2>
+        </div>
+        <a href="https://wa.me/5511999999999" target="_blank" class="rounded-md bg-gradient-to-r from-[#f08bb1] to-[#e06691] px-8 py-3.5 text-sm font-medium text-white shadow-[0_1rem_2.5rem_rgba(240,139,177,.2)] transition hover:-translate-y-0.5">
+          Ver Tabela Completa
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Procedimento 1 -->
+        <article class="product-card overflow-hidden shadow-[0_1.5rem_5rem_rgba(0,0,0,.15)]" style="clip-path: polygon(0px 0px, 86% 0px, 100% 12%, 100% 100%, 0px 100%); background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)); padding: 0.0625rem;">
+          <div class="bg-white">
+            <img src="https://images.unsplash.com/photo-1512290900672-1f4f5f59fa4f?auto=format&fit=crop&w=1000&q=80" alt="Limpeza de pele profunda e hidratação" class="h-80 w-full object-cover" style="filter: saturate(1.15); object-position: center 25%;">
+            <div class="p-6" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 247, 0.98), rgba(255, 255, 255, 0.94));">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-xl font-normal tracking-tight text-[#1e1b24]">
+                    Limpeza de Pele Profunda & Glow Detox
+                  </h3>
+                  <p class="mt-2 text-sm text-[#1e1b24]/60">
+                    Remoção de impurezas, hidratação profunda com ácido hialurônico e fototerapia LED.
+                  </p>
+                  <p class="mt-4 text-2xl font-medium tracking-tight text-[#1e1b24]">
+                    R$ 280,00 <span class="text-xs font-normal text-[#1e1b24]/60">/ sessão</span>
+                  </p>
+                </div>
+                <div class="pt-1 text-right shrink-0">
+                  <div class="flex items-center text-[#ffcc4f] gap-0.5">
+                    <iconify-icon icon="solar:star-linear" class="text-base"></iconify-icon>
+                    <span class="text-xs font-medium text-[#1e1b24] ml-1">5.0</span>
+                  </div>
+                  <p class="mt-2 text-xs font-normal text-[#1e1b24]/60">850+ sessões</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Procedimento 2 -->
+        <article class="product-card mt-0 overflow-hidden shadow-[0_1.5rem_5rem_rgba(0,0,0,.15)] md:mt-[-2.5rem]" style="clip-path: polygon(0px 0px, 86% 0px, 100% 12%, 100% 100%, 0px 100%); background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)); padding: 0.0625rem;">
+          <div class="bg-white">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80" alt="Bioestimuladores de colágeno e rejuvenescimento" class="h-80 w-full object-cover" style="filter: saturate(1.15); object-position: center 30%;">
+            <div class="p-6" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 247, 0.98), rgba(255, 255, 255, 0.94));">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-xl font-normal tracking-tight text-[#1e1b24]">
+                    Bioestimulador de Colágeno & Firmeza
+                  </h3>
+                  <p class="mt-2 text-sm text-[#1e1b24]/60">
+                    Estímulo natural para recuperar a elasticidade, sustentação facial e densidade dérmica.
+                  </p>
+                  <p class="mt-4 text-2xl font-medium tracking-tight text-[#1e1b24]">
+                    Sob Avaliação <span class="text-xs font-normal text-[#1e1b24]/60">(Plano Individual)</span>
+                  </p>
+                </div>
+                <div class="pt-1 text-right shrink-0">
+                  <div class="flex items-center text-[#ffcc4f] gap-0.5">
+                    <iconify-icon icon="solar:star-linear" class="text-base"></iconify-icon>
+                    <span class="text-xs font-medium text-[#1e1b24] ml-1">5.0</span>
+                  </div>
+                  <p class="mt-2 text-xs font-normal text-[#1e1b24]/60">1.2k+ avaliações</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Procedimento 3 -->
+        <article class="product-card overflow-hidden shadow-[0_1.5rem_5rem_rgba(0,0,0,.15)]" style="clip-path: polygon(0px 0px, 86% 0px, 100% 12%, 100% 100%, 0px 100%); background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)); padding: 0.0625rem;">
+          <div class="bg-white">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80" alt="Peeling químico regenerativo" class="h-80 w-full object-cover" style="filter: saturate(1.15); object-position: center 25%;">
+            <div class="p-6" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 247, 0.98), rgba(255, 255, 255, 0.94));">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-xl font-normal tracking-tight text-[#1e1b24]">
+                    Peeling de Renovação & Uniformização
+                  </h3>
+                  <p class="mt-2 text-sm text-[#1e1b24]/60">
+                    Atenuação de manchas, controle de oleosidade e refinamento da textura superficial.
+                  </p>
+                  <p class="mt-4 text-2xl font-medium tracking-tight text-[#1e1b24]">
+                    R$ 350,00 <span class="text-xs font-normal text-[#1e1b24]/60">/ sessão</span>
+                  </p>
+                </div>
+                <div class="pt-1 text-right shrink-0">
+                  <div class="flex items-center text-[#ffcc4f] gap-0.5">
+                    <iconify-icon icon="solar:star-linear" class="text-base"></iconify-icon>
+                    <span class="text-xs font-medium text-[#1e1b24] ml-1">4.9</span>
+                  </div>
+                  <p class="mt-2 text-xs font-normal text-[#1e1b24]/60">640+ sessões</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Procedimento 4 -->
+        <article class="product-card mt-0 overflow-hidden shadow-[0_1.5rem_5rem_rgba(0,0,0,.15)] md:mt-[-2.5rem]" style="clip-path: polygon(0px 0px, 86% 0px, 100% 12%, 100% 100%, 0px 100%); background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01)); padding: 0.0625rem;">
+          <div class="bg-white">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80" alt="Drenagem linfática e contorno corporal" class="h-80 w-full object-cover" style="filter: saturate(1.15); object-position: center 30%;">
+            <div class="p-6" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 247, 0.98), rgba(255, 255, 255, 0.94));">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-xl font-normal tracking-tight text-[#1e1b24]">
+                    Drenagem Linfática Método Exclusivo
+                  </h3>
+                  <p class="mt-2 text-sm text-[#1e1b24]/60">
+                    Alívio de retenção, desintoxicação tecidual e remodelagem com toque suave e relaxante.
+                  </p>
+                  <p class="mt-4 text-2xl font-medium tracking-tight text-[#1e1b24]">
+                    R$ 220,00 <span class="text-xs font-normal text-[#1e1b24]/60">/ sessão</span>
+                  </p>
+                </div>
+                <div class="pt-1 text-right shrink-0">
+                  <div class="flex items-center text-[#ffcc4f] gap-0.5">
+                    <iconify-icon icon="solar:star-linear" class="text-base"></iconify-icon>
+                    <span class="text-xs font-medium text-[#1e1b24] ml-1">5.0</span>
+                  </div>
+                  <p class="mt-2 text-xs font-normal text-[#1e1b24]/60">2.1k+ sessões</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 6. COMO FUNCIONA (PROCESS STEP CARDS)          -->
+    <!-- ============================================== -->
+    <section class="mx-auto w-full max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#e06691]">Sua Jornada</span>
+        <h2 class="reveal-title text-3xl sm:text-4xl font-medium tracking-tight text-[#1e1b24] mt-1">
+          Como Funciona o Seu Atendimento
+        </h2>
+        <p class="text-sm font-light text-[#1e1b24]/70 mt-3">
+          Três passos simples para iniciar sua experiência de autocuidado e transformação.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="reveal-card bg-white border border-black/5 p-8 shadow-[0_1.5rem_4rem_rgba(0,0,0,.04)] rounded-xl">
+          <p class="text-4xl font-medium tracking-tight text-[#f08bb1]">01</p>
+          <h3 class="mt-6 text-xl font-normal tracking-tight text-[#1e1b24]">
+            Avaliação Personalizada
+          </h3>
+          <p class="mt-3 text-sm font-light leading-7 text-[#1e1b24]/60">
+            Conversamos sobre suas queixas, histórico e objetivos para mapear com precisão as necessidades da sua pele.
+          </p>
+        </article>
+
+        <article class="reveal-card bg-white border border-black/5 p-8 shadow-[0_1.5rem_4rem_rgba(0,0,0,.04)] rounded-xl">
+          <p class="text-4xl font-medium tracking-tight text-[#f08bb1]">02</p>
+          <h3 class="mt-6 text-xl font-normal tracking-tight text-[#1e1b24]">
+            Plano Terapêutico Sob Medida
+          </h3>
+          <p class="mt-3 text-sm font-light leading-7 text-[#1e1b24]/60">
+            Desenvolvemos o cronograma ideal combinando técnicas e tecnologias com foco em naturalidade e longevidade.
+          </p>
+        </article>
+
+        <article class="reveal-card bg-white border border-black/5 p-8 shadow-[0_1.5rem_4rem_rgba(0,0,0,.04)] rounded-xl">
+          <p class="text-4xl font-medium tracking-tight text-[#f08bb1]">03</p>
+          <h3 class="mt-6 text-xl font-normal tracking-tight text-[#1e1b24]">
+            Cuidado & Acompanhamento
+          </h3>
+          <p class="mt-3 text-sm font-light leading-7 text-[#1e1b24]/60">
+            Execução de cada sessão em cabine individual e suporte pós-procedimento contínuo para manter os resultados.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 7. A ESPECIALISTA (TEAM/FOUNDER CARD)          -->
+    <!-- ============================================== -->
+    <section id="sobre" class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 sm:px-10 lg:grid-cols-[22rem_1fr] lg:px-12">
+      <!-- Foto com recorte poligonal -->
+      <div class="relative mx-auto w-full max-w-sm">
+        <div class="team-card overflow-hidden shadow-[0_2rem_5rem_rgba(0,0,0,.18)]" style="clip-path: polygon(0 0, 80% 0, 100% 16%, 100% 100%, 0 100%);">
+          <img src="https://images.unsplash.com/photo-1594824813583-a9d9e60058e1?auto=format&fit=crop&w=800&q=80" alt="Mychelle Fernandes Especialista em Estética" class="h-96 w-full object-cover" style="filter: saturate(1.1); object-position: center 20%;">
+          <div class="p-6 text-center" style="background: linear-gradient(105deg, rgba(255, 255, 255, 0.96), rgba(250, 245, 247, 0.96));">
+            <h3 class="text-xl font-medium tracking-tight text-[#1e1b24]">
+              Mychelle Fernandes
+            </h3>
+            <p class="text-xs text-[#e06691] font-medium mt-1">
+              Especialista em Estética Avançada & Cosmetologia
+            </p>
+            <div class="mt-4 flex justify-center gap-4 text-xl text-[#1e1b24]/60">
+              <a href="#" class="hover:text-[#f08bb1] transition"><iconify-icon icon="solar:camera-linear"></iconify-icon></a>
+              <a href="#" class="hover:text-[#f08bb1] transition"><iconify-icon icon="solar:planet-linear"></iconify-icon></a>
+              <a href="#" class="hover:text-[#f08bb1] transition"><iconify-icon icon="solar:letter-linear"></iconify-icon></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biografia e Proposta de Valor -->
+      <div class="space-y-6 max-w-2xl">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#e06691]">Dedicação & Amor à Profissão</span>
+        <h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-[#1e1b24]">
+          "Minha missão é fazer você se olhar no espelho e se encantar pela sua própria história."
+        </h2>
+        <p class="text-sm font-light leading-7 text-[#1e1b24]/75">
+          Com mais de 8 anos de experiência prática e constante atualização nos maiores centros de estética do país, Mychelle Fernandes fundou sua clínica boutique com a proposta de oferecer uma estética ética, segura e focada na individualidade de cada paciente.
+        </p>
+        <p class="text-sm font-light leading-7 text-[#1e1b24]/75">
+          Aqui, cada procedimento é precedido por um escuta atenta e detalhada. Nosso compromisso é entregar harmonia sem exageros, realçando aquilo que já é belo em você.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-6 items-center">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#f08bb1]/15 text-[#e06691]">
+              <iconify-icon icon="solar:magic-stick-3-linear" class="text-xl"></iconify-icon>
+            </span>
+            <div class="text-xs">
+              <strong class="block text-sm text-[#1e1b24]">Certificação Contínua</strong>
+              Técnicas com evidência científica
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#f08bb1]/15 text-[#e06691]">
+              <iconify-icon icon="solar:star-fall-linear" class="text-xl"></iconify-icon>
+            </span>
+            <div class="text-xs">
+              <strong class="block text-sm text-[#1e1b24]">Espaço Exclusivo</strong>
+              Biossegurança e privacidade total
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 8. DEPOIMENTOS DE PACIENTES (CAROUSEL)         -->
+    <!-- ============================================== -->
+    <section id="depoimentos" class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 sm:px-10 lg:grid-cols-[26rem_1fr] lg:px-12">
+      <div class="relative mx-auto w-full max-w-md">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Paciente satisfeita" class="h-72 w-full object-cover shadow-[0_1.5rem_5rem_rgba(0,0,0,.18)] rounded-md">
+        <div class="absolute bottom-0 right-0 grid grid-cols-2">
+          <button type="button" aria-label="Depoimento anterior" class="flex h-14 w-16 items-center justify-center bg-white/30 text-white backdrop-blur-md hover:bg-white/50 transition" id="testi-prev">
+            <iconify-icon icon="solar:alt-arrow-left-linear" class="text-2xl" style="stroke-width: 1.5;"></iconify-icon>
+          </button>
+          <button type="button" aria-label="Próximo depoimento" class="flex h-14 w-16 items-center justify-center bg-white text-[#f08bb1] hover:bg-[#faf9fa] transition" id="testi-next">
+            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-2xl" style="stroke-width: 1.5;"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex gap-2 text-[#ffcc4f]">
+          <iconify-icon icon="solar:star-linear" class="text-xl"></iconify-icon>
+          <iconify-icon icon="solar:star-linear" class="text-xl"></iconify-icon>
+          <iconify-icon icon="solar:star-linear" class="text-xl"></iconify-icon>
+          <iconify-icon icon="solar:star-linear" class="text-xl"></iconify-icon>
+          <iconify-icon icon="solar:star-linear" class="text-xl"></iconify-icon>
+        </div>
+
+        <blockquote class="mt-6 max-w-2xl text-lg font-light leading-8 text-[#1e1b24] min-h-[5.5rem] transition-opacity duration-300" id="testi-quote">
+          “Fiz o protocolo de limpeza de pele e bioestimulador com a Mychelle e o resultado superou todas as minhas expectativas. O atendimento é impecável, o ambiente super calmo e o resultado ficou muito sutil e natural!”
+        </blockquote>
+
+        <div class="mt-6 flex items-center gap-4">
+          <span class="h-0.5 w-16 bg-[#1e1b24]"></span>
+          <cite class="text-sm font-normal not-italic text-[#1e1b24] transition-opacity duration-300" id="testi-author">
+            Dra. Camila Vasconcellos, Advogada
+          </cite>
+        </div>
+
+        <div class="mt-10 flex gap-3" id="testi-indicators">
+          <span class="h-1 w-16 bg-[#1e1b24] transition-colors duration-300"></span>
+          <span class="h-1 w-16 bg-black/10 transition-colors duration-300"></span>
+          <span class="h-1 w-16 bg-black/10 transition-colors duration-300"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 9. PERGUNTAS FREQUENTES (ACCORDION / FAQ)      -->
+    <!-- ============================================== -->
+    <section id="faq" class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-14 px-6 py-24 sm:px-10 lg:grid-cols-[20rem_1fr] lg:px-12">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#e06691]">Tire suas dúvidas</span>
+        <h2 class="reveal-title text-4xl font-medium leading-tight tracking-tight text-[#1e1b24] mt-1">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-xs sm:text-sm font-light text-[#1e1b24]/60 mt-3">
+          Tem alguma dúvida específica sobre o seu tipo de pele ou procedimento? Fale conosco diretamente.
+        </p>
+        <a href="https://wa.me/5511999999999" target="_blank" class="mt-8 inline-flex rounded-md bg-gradient-to-r from-[#f08bb1] to-[#e06691] px-8 py-3.5 text-sm font-medium text-white shadow-[0_1rem_2.5rem_rgba(240,139,177,.2)] transition hover:-translate-y-0.5">
+          Falar no WhatsApp
+        </a>
+      </div>
+
+      <div class="space-y-0 divide-y divide-black/10 border-t border-b border-black/10">
+        <details class="group py-6" open>
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-8 text-lg font-normal tracking-tight text-[#1e1b24]">
+            Como funciona a primeira avaliação na clínica?
+            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl transition-transform duration-300 group-open:-rotate-180" style="stroke-width: 1.5;"></iconify-icon>
+          </summary>
+          <p class="mt-4 max-w-3xl text-sm font-light leading-7 text-[#1e1b24]/65">
+            A consulta de avaliação dura cerca de 45 a 60 minutos. Realizamos uma anamnese completa, analisamos sua pele sob lentes de alta definição e montamos um plano de tratamento exclusivo com estimativas de sessões e orientações para home care.
+          </p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-8 text-lg font-normal tracking-tight text-[#1e1b24]">
+            Os procedimentos doem ou precisam de afastamento das atividades?
+            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl transition-transform duration-300 group-open:-rotate-180" style="stroke-width: 1.5;"></iconify-icon>
+          </summary>
+          <p class="mt-4 max-w-3xl text-sm font-light leading-7 text-[#1e1b24]/65">
+            A grande maioria dos nossos procedimentos é indolor ou causa apenas leve desconforto suportável, sendo utilizados anestésicos tópicos de alta potência quando necessário. Você pode retomar sua rotina normal no mesmo dia.
+          </p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-8 text-lg font-normal tracking-tight text-[#1e1b24]">
+            Quais são as formas de pagamento disponíveis?
+            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl transition-transform duration-300 group-open:-rotate-180" style="stroke-width: 1.5;"></iconify-icon>
+          </summary>
+          <p class="mt-4 max-w-3xl text-sm font-light leading-7 text-[#1e1b24]/65">
+            Aceitamos cartões de crédito com parcelamento em até 10x sem juros, cartões de débito, PIX com desconto especial à vista e convênios selecionados para reembolso.
+          </p>
+        </details>
+
+        <details class="group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-8 text-lg font-normal tracking-tight text-[#1e1b24]">
+            Com que frequência devo fazer a limpeza de pele ou manutenção?
+            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-2xl transition-transform duration-300 group-open:-rotate-180" style="stroke-width: 1.5;"></iconify-icon>
+          </summary>
+          <p class="mt-4 max-w-3xl text-sm font-light leading-7 text-[#1e1b24]/65">
+            Para peles normais a mistas, recomendamos a manutenção a cada 30 a 45 dias. Peles oleosas ou acneicas podem se beneficiar de intervalos de 20 a 30 dias na fase de controle.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 10. RODAPÉ INSTITUCIONAL                       -->
+    <!-- ============================================== -->
+    <footer class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 pb-14 pt-16 sm:px-10 md:grid-cols-[1.3fr_1fr_1fr_1fr] lg:px-12 border-t border-black/5">
+      <div>
+        <span class="text-xl font-medium tracking-tight text-[#1e1b24] block">
+          Centro de Estética Mychelle Fernandes
+        </span>
+        <p class="mt-3 text-xs font-light text-[#1e1b24]/60 max-w-xs leading-5">
+          Clínica de Estética Avançada e Bem-Estar. Atendimento exclusivo com hora marcada em ambiente boutique.
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a aria-label="Instagram" href="https://instagram.com" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-md bg-black/5 text-lg transition hover:bg-black/10 text-[#1e1b24]">
+            <iconify-icon icon="solar:camera-linear"></iconify-icon>
+          </a>
+          <a aria-label="Localização" href="#inicio" class="flex h-10 w-10 items-center justify-center rounded-md bg-black/5 text-lg transition hover:bg-black/10 text-[#1e1b24]">
+            <iconify-icon icon="solar:planet-linear"></iconify-icon>
+          </a>
+          <a aria-label="WhatsApp" href="https://wa.me/5511999999999" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-md bg-black/5 text-lg transition hover:bg-black/10 text-[#1e1b24]">
+            <iconify-icon icon="solar:play-linear"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-medium tracking-tight text-[#1e1b24]">Procedimentos</h4>
+        <ul class="mt-5 space-y-3 text-xs font-light text-[#1e1b24]/75">
+          <li><a href="#procedimentos" class="hover:text-[#f08bb1]">Limpeza de Pele Glow</a></li>
+          <li><a href="#procedimentos" class="hover:text-[#f08bb1]">Bioestimuladores</a></li>
+          <li><a href="#procedimentos" class="hover:text-[#f08bb1]">Peeling de Renovação</a></li>
+          <li><a href="#procedimentos" class="hover:text-[#f08bb1]">Drenagem Linfática</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-medium tracking-tight text-[#1e1b24]">Atendimento</h4>
+        <ul class="mt-5 space-y-3 text-xs font-light text-[#1e1b24]/75">
+          <li>Seg a Sex: 08h às 20h</li>
+          <li>Sábado: 09h às 16h</li>
+          <li>Av. Paulista, 1000 - Jardins</li>
+          <li>São Paulo - SP</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-medium tracking-tight text-[#1e1b24]">Contato</h4>
+        <ul class="mt-5 space-y-3 text-xs font-light text-[#1e1b24]/75">
+          <li>(11) 99999-9999</li>
+          <li>contato@mychellefernandes.com.br</li>
+          <li>Atendimento Humanizado</li>
+        </ul>
+      </div>
+
+      <p class="md:col-span-4 text-center text-xs font-light text-[#1e1b24]/50 pt-8 border-t border-black/5">
+        © 2026 Centro de Estética Mychelle Fernandes. Todos os direitos reservados.
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- SCRIPTS & INTERATIVIDADE                       -->
+  <!-- ============================================== -->
+  <script>
+    // 1. Barra de progresso com GSAP ScrollTrigger
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.gsap && window.ScrollTrigger) {
+        gsap.to('#scroll-progress', {
+          scaleX: 1,
+          ease: 'none',
+          scrollTrigger: {
+            scrub: 0.2,
+            start: 0,
+            end: 'max'
+          }
+        });
+      }
+    });
+
+    // 2. Rotator de palavras do Hero
+    const rotators = document.querySelectorAll('.word-rotator');
+    if (rotators.length) {
+      let currentIndex = 0;
+      setInterval(() => {
+        const nextIndex = (currentIndex + 1) % rotators.length;
+        if (window.gsap) {
+          gsap.to(rotators[currentIndex], { yPercent: -100, opacity: 0, filter: 'blur(5px)', duration: 0.8, ease: 'power3.inOut' });
+          gsap.fromTo(rotators[nextIndex],
+            { yPercent: 100, opacity: 0, filter: 'blur(5px)' },
+            { yPercent: 0, opacity: 1, filter: 'blur(0px)', duration: 0.8, ease: 'power3.inOut' }
+          );
+        }
+        currentIndex = nextIndex;
+      }, 2600);
+    }
+
+    // 3. Carrossel de Depoimentos
+    const testimonials = [
+      {
+        quote: "“Fiz o protocolo de limpeza de pele e bioestimulador com a Mychelle e o resultado superou todas as minhas expectativas. O atendimento é impecável, o ambiente super calmo e o resultado ficou muito sutil e natural!”",
+        author: "Dra. Camila Vasconcellos, Advogada"
+      },
+      {
+        quote: "“Procurei a clínica com queixas de manchas pós-sol e melasma. O protocolo de peeling e o acompanhamento domiciliar clarearam minha pele sem descamação agressiva. Minha autoestima é outra!”",
+        author: "Juliana Mendes, Arquiteta"
+      },
+      {
+        quote: "“O cuidado que a Mychelle tem com cada detalhe faz toda a diferença. As sessões de drenagem me ajudaram demais na recuperação e relaxamento. Recomendo de olhos fechados!”",
+        author: "Renata Silveira, Empresária"
+      }
+    ];
+    let currentTesti = 0;
+    const quoteEl = document.getElementById('testi-quote');
+    const authorEl = document.getElementById('testi-author');
+    const indicators = document.getElementById('testi-indicators');
+
+    function updateTestimonial(idx) {
+      if (quoteEl && authorEl) {
+        quoteEl.style.opacity = '0';
+        authorEl.style.opacity = '0';
+        setTimeout(() => {
+          quoteEl.textContent = testimonials[idx].quote;
+          authorEl.textContent = testimonials[idx].author;
+          quoteEl.style.opacity = '1';
+          authorEl.style.opacity = '1';
+        }, 250);
+        if (indicators && indicators.children) {
+          Array.from(indicators.children).forEach((ind, i) => {
+            ind.className = i === idx ? 'h-1 w-16 bg-[#1e1b24] transition-colors duration-300' : 'h-1 w-16 bg-black/10 transition-colors duration-300';
+          });
+        }
+      }
+    }
+
+    document.getElementById('testi-prev')?.addEventListener('click', () => {
+      currentTesti = (currentTesti - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial(currentTesti);
+    });
+    document.getElementById('testi-next')?.addEventListener('click', () => {
+      currentTesti = (currentTesti + 1) % testimonials.length;
+      updateTestimonial(currentTesti);
+    });
+
+    // 4. Formulário de Inscrição
+    const form = document.getElementById('subscribe-form');
+    const msg = document.getElementById('subscribe-msg');
+    if (form && msg) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.reset();
+        msg.style.opacity = '1';
+        setTimeout(() => { msg.style.opacity = '0'; }, 3500);
+      });
+    }
+
+    // 5. Motor WebGL Aura Shader Vivo
+    (function initAura() {
+      const canvas = document.getElementById('auraCanvas');
+      if (!canvas) return;
+      const gl = canvas.getContext('webgl', { alpha: true, antialias: false, powerPreference: 'high-performance' });
+      if (!gl) return;
+
+      const vs = `
+        attribute vec2 position;
+        varying vec2 vUv;
+        void main() {
+          vUv = position * 0.5 + 0.5;
+          gl_Position = vec4(position, 0.0, 1.0);
+        }
+      `;
+      const fs = `
+        precision mediump float;
+        varying vec2 vUv;
+        uniform float uTime;
+        uniform vec2 uResolution;
+
+        float circle(vec2 uv, vec2 p, float r) {
+          return smoothstep(r, r - 0.42, length(uv - p));
+        }
+
+        void main() {
+          vec2 uv = vUv;
+          vec2 aspect = vec2(uResolution.x / uResolution.y, 1.0);
+          vec2 q = (uv - 0.5) * aspect;
+
+          float beat = min(uTime / 8.0, 1.0);
+          vec2 p1 = vec2(-0.36 + 0.06 * sin(uTime * 0.55), 0.25 + 0.04 * cos(uTime * 0.42));
+          vec2 p2 = vec2(0.42 + 0.05 * cos(uTime * 0.36), -0.03 + 0.07 * sin(uTime * 0.48));
+          vec2 p3 = vec2(0.02 + 0.08 * sin(uTime * 0.28), -0.42 + 0.05 * cos(uTime * 0.44));
+
+          float a = circle(q, p1, 0.36 + 0.04 * sin(uTime * 0.6));
+          float b = circle(q, p2, 0.42 + 0.03 * cos(uTime * 0.5));
+          float c = circle(q, p3, 0.30 + 0.04 * sin(uTime * 0.7));
+
+          vec3 color = vec3(0.0);
+          color += a * vec3(0.82, 0.12, 0.96);
+          color += b * vec3(0.16, 0.52, 0.98);
+          color += c * vec3(0.22, 0.95, 0.82);
+
+          float vignette = smoothstep(0.86, 0.14, length(uv - 0.5));
+          float alpha = (a + b + c) * 0.24 * vignette * beat;
+          gl_FragColor = vec4(color, alpha);
+        }
+      `;
+
+      function compile(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src);
+        gl.compileShader(s);
+        return s;
+      }
+
+      const prog = gl.createProgram();
+      gl.attachShader(prog, compile(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+
+      const posLoc = gl.getAttribLocation(prog, 'position');
+      const timeLoc = gl.getUniformLocation(prog, 'uTime');
+      const resLoc = gl.getUniformLocation(prog, 'uResolution');
+
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(window.innerWidth * dpr);
+        canvas.height = Math.floor(window.innerHeight * dpr);
+        gl.viewport(0, 0, canvas.width, canvas.height);
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+      resize();
+
+      const start = performance.now();
+      function render(now) {
+        const t = (now - start) * 0.001;
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.useProgram(prog);
+        gl.enableVertexAttribArray(posLoc);
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+        gl.uniform1f(timeLoc, t);
+        gl.uniform2f(resLoc, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        requestAnimationFrame(render);
+      }
+      requestAnimationFrame(render);
+    })();
+  </script>
+</body>
+</html>
